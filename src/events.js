@@ -142,20 +142,19 @@ exports.listen = function listen (client)
       (message) =>
       {
 
-         var meseg = message.content.toLowerCase(); // whatever is sent becomes lowercased
-         
+         const meseg = message.content.toLowerCase();
+
          if (meseg === "!alphaturk")
          {
-            const helpEmbed = {
-               color: 3447003,
-               thumbnail: {
-                  url: 'https://i.imgur.com/zoUqhqS.jpg',
-               },
-            }
-
-		      message.channel.send({ embeds: [helpEmbed] });
+            message.channel.send({"embed": {
+      "color": 3447003,
+      "thumbnail": {
+         "url": 'https://i.imgur.com/zoUqhqS.jpg'
+      },
+      }
+   });
          }
-         
+
          if (message.channel.type !== "dm")
          {
 
