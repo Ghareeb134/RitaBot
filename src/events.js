@@ -146,12 +146,7 @@ exports.listen = function listen (client)
 
          if (meseg === "!alphaturk")
          {
-            message.channel.send({"embed": {
-      "color": 3447003,
-      "thumbnail": {
-         "url": 'https://i.imgur.com/zoUqhqS.jpg'
-      },
-      }});
+            message.channel.send('https://i.imgur.com/zoUqhqS.jpg');
          }
 
          if (message.channel.type !== "dm")
