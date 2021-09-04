@@ -66,9 +66,9 @@ module.exports = function run (guild, config)
    );
    */
 
-   return defaultChannel.send(`Hello, I'm RITA. Thanks for inviting me.`, {"embed": {
+   return defaultChannel.send(`Selam, I'm Çevirici. Thanks for inviting me.`, {"embed": {
       "color": 9514728,
-      "description": "We developed RITA to be the best free Translator Bot on Discord (& soon Guilded).\nSpeaking to other people should not have to cost you an arm and a leg, Our aim is to break that language barrier without you having to pay out for the privilege.",
+      "description": "Speaking to other people should not have to cost you an arm and a leg, Our aim is to break that language barrier without you having to pay out for the privilege.",
       "fields": [
          {
             "name": ":tada: Getting Started",
@@ -80,16 +80,12 @@ module.exports = function run (guild, config)
          },
          {
             "name": ":lock: Permissions",
-            "value": `Rita has many functions, These all need different permissions to work. To check that RITA has ll the permissions she needs to functions correctly please use the **!tr checkperms bot** command.`
-         },
-         {
-            "name": ":moneybag: On a side note.",
-            "value": `While rita is free, and we always aim to keep it this way, She does have costs.\nCurrently the Dev Team pays these cost. If you would like to support us and enable us to continue to provide RITA for free then please visit our [GitHub Sponsors](https://github.com/sponsors/RitaBot-Project) page, or type **${config.translateCmdShort} donate** for more info`
+            "value": `Çevirici has many functions, These all need different permissions to work. To check that Çevirici has ll the permissions she needs to functions correctly please use the **!tr checkperms bot** command.`
          }
       ],
 
       "footer": {
-         "text": "RITA is developed by the RITA Bot Project"
+         "text": "Çevirici is developed by some random dude"
       },
       "title": "A MESSAGE FROM THE DEV TEAM"
    }});
@@ -101,7 +97,7 @@ module.exports.newBot = function newBot (data)
 
    data.message.channel.send({"embed": {
       "color": 9514728,
-      "description": "Let's get started:\nRita supports a few different methods of translations.\n**‏‏‎ ‎‎‎‎‎‎**",
+      "description": "Let's get started:\nÇevirici supports a few different methods of translations.\n**‏‏‎ ‎‎‎‎‎‎**",
       "fields": [
          {
             "name": ":flag_white: Translate by Reacting",
@@ -137,9 +133,9 @@ module.exports.newBot = function newBot (data)
       ],
 
       "footer": {
-         "text": `RITA is developed by the RITA Bot Project`
+         "text": `Çevirici is developed by some random dude`
       },
-      "title": "THANK YOU FOR CHOOSING TO USE RITA."
+      "title": "THANK YOU."
    }});
 
 };
