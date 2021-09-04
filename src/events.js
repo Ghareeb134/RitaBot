@@ -14,9 +14,6 @@ const react = require("./commands/translation_commands/translate.react");
 const botVersion = require("../package.json").version;
 const botCreator = "Collaboration";
 const joinMessage = require("./commands/info_commands/join");
-const alphaMessage = require("./commands/info_commands/turkish");
-
-var guildToSupply;
 
 // ----------
 // Core Code
@@ -189,9 +186,6 @@ exports.listen = function listen (client)
                db.increaseStatsCount(col, id);
                // Need to have another if statment here, if server length is greeater than 1 then run below, if not do nothing.
                // SetStatus(client.user, "online", config);
-               
-               
-               alphaMessage(guildToSupply, config);
 
             }
 
@@ -450,7 +444,6 @@ exports.listen = function listen (client)
 
          joinMessage(guild, config);
 
-         guildToSupply = guild;
       }
    );
 
