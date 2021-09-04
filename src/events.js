@@ -151,8 +151,7 @@ exports.listen = function listen (client)
       "thumbnail": {
          "url": 'https://i.imgur.com/zoUqhqS.jpg'
       },
-      }
-   });
+      }});
          }
 
          if (message.channel.type !== "dm")
