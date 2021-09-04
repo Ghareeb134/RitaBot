@@ -146,7 +146,7 @@ exports.listen = function listen (client)
 
          if (meseg === "!alphaturk")
          {
-            message.channel.send('https://i.imgur.com/u3KfEJh.jpg');
+            message.channel.send('https://i.imgur.com/cPI5JUE.jpg');
          }
 
          if (message.channel.type !== "dm")
