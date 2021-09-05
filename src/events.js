@@ -15,15 +15,11 @@ const botVersion = require("../package.json").version;
 const botCreator = "Collaboration";
 const joinMessage = require("./commands/info_commands/join");
 
-
-
-
 // ----------
 // Core Code
 // ----------
 
-exports.listen = function listen (
-)
+exports.listen = function listen (client)
 {
 
    let config = null;
@@ -143,12 +139,8 @@ exports.listen = function listen (
 
    client.on(
       "message",
-      async (message) =>
+      (message) =>
       {
-
-         if (!message.guild) return;
-
-
 
          const meseg = message.content.toLowerCase();
 
