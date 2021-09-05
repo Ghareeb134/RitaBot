@@ -15,46 +15,7 @@ const botVersion = require("../package.json").version;
 const botCreator = "Collaboration";
 const joinMessage = require("./commands/info_commands/join");
 
-import {VoiceChannel} from 'discord.js';
-import {
-   AudioPlayerStatus,
-   createAudioPlayer,
-   createAudioResource,
-   entersState,
-   joinVoiceChannel,
-   StreamType,
-   VoiceConnectionStatus
-} from "@discordjs/voice";
-import {createDiscordJSAdapter} from './adapter';
 
-const player = createAudioPlayer();
-
-
-function playSong () {
-   const resource = createAudioResource('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3', {
-      "inputType": StreamType.Arbitrary
-	});
-
-	player.play(resource);
-
-	return entersState(player, AudioPlayerStatus.Playing, 5e3);
-}
-
-async function connectToChannel(channel: VoiceChannel) {
-	const connection = joinVoiceChannel({
-		channelId: channel.id,
-		guildId: channel.guild.id,
-		adapterCreator: createDiscordJSAdapter(channel),
-	});
-
-	try {
-		await entersState(connection, VoiceConnectionStatus.Ready, 30e3);
-		return connection;
-	} catch (error) {
-		connection.destroy();
-		throw error;
-	}
-}
 
 
 // ----------
@@ -142,14 +103,6 @@ exports.listen = function listen (
             "status": "online"
          });
 
-         console.log('Discord.js client is ready!');
-
-	try {
-		await playSong();
-		console.log('Song is ready to play!');
-	} catch (error) {
-		console.error(error);
-	}
          // ----------------------
          // All shards are online
          // ----------------------
@@ -195,21 +148,7 @@ exports.listen = function listen (
 
          if (!message.guild) return;
 
-	if (message.content === '!join') {
-		const channel = message.member?.voice.channel;
 
-		if (channel) {
-			try {
-				const connection = await connectToChannel(channel);
-				connection.subscribe(player);
-				message.reply('Playing now!');
-			} catch (error) {
-				console.error(error);
-			}
-		} else {
-			message.reply('Join a voice channel then try again!');
-		}
-	}
 
          const meseg = message.content.toLowerCase();
 
