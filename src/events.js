@@ -15,24 +15,24 @@ const botVersion = require("../package.json").version;
 const botCreator = "Collaboration";
 const joinMessage = require("./commands/info_commands/join");
 
-import { Client, VoiceChannel, Intents } from 'discord.js';
+import {VoiceChannel} from 'discord.js';
 import {
-	joinVoiceChannel,
-	createAudioPlayer,
-	createAudioResource,
-	entersState,
-	StreamType,
-	AudioPlayerStatus,
-	VoiceConnectionStatus,
-} from '@discordjs/voice';
-import { createDiscordJSAdapter } from './adapter';
+   AudioPlayerStatus,
+   createAudioPlayer,
+   createAudioResource,
+   entersState,
+   joinVoiceChannel,
+   StreamType,
+   VoiceConnectionStatus
+} from "@discordjs/voice";
+import {createDiscordJSAdapter} from './adapter';
 
 const player = createAudioPlayer();
 
 
-function playSong() {
-	const resource = createAudioResource('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3', {
-		inputType: StreamType.Arbitrary,
+function playSong () {
+   const resource = createAudioResource('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3', {
+      "inputType": StreamType.Arbitrary
 	});
 
 	player.play(resource);
